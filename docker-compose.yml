@@ -1,0 +1,10 @@
+version: '3'
+services:
+    alpine:
+        image: alpine_img:latest
+        build: ./
+        volumes:
+            - ./:/var/www/localhost/htdocs
+            - ./docker/apache-logs:/var/log/apache
+        ports:
+            - "8085:80"
